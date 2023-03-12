@@ -1,5 +1,9 @@
 # traffic-data-to-event-log
 
+This repository holds the datasets used for this research. The datasets folder contains a zip file for each research environment.
+Each environment holds both CSVs and pickled Dataframe objects of the datasets - it is reccommended to work with the Dataframe objects.
+
+
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
 This work is licensed under a
