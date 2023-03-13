@@ -1,7 +1,8 @@
 # traffic-data-to-event-log
 
 ## Description
-This repository holds the datasets used for this research. The datasets folder contains a zip file for each research environment. <br>
+Download the datasets using this [link]: https://campushaifaac-my.sharepoint.com/:f:/g/personal/gengel01_campus_haifa_ac_il/ElOfw--h8W5Hl3nfQtiQJSgBOgl1OQt5ugXg4VtY-gDyog?e=30yMdB <br> 
+The datasets folder contains a zip file for each research environment. <br>
 Each environment holds both CSVs and pickled Dataframe objects of the datasets - it is reccommended to work with the Dataframe objects.
 
 ## Licence
