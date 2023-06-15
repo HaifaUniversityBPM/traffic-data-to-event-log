@@ -72,6 +72,7 @@ The data sets are stored in a flat zip files structure.
 * PTP-INTERLEAVED.zip - contains the data for the Purchase to Pay (PTP) business process from the recordings for evaluation (BPs are running in concurrency)
 * recognition_results.zip - contains data sets for both the PTP and HR BPs after feature engineering stage and classification. The results are presented as probability distribution to supply data for uncertainty research
 * UNCERTAIN_XES_LOGS - XES formatting of the data in recognition_results.
+* BPMN_GROUND_TRUTH.zip - contains a BPMN represenation of the executed business processes (could be served as a ground truth for a log abstraction task) 
 * LICENCE.md - self explainatory
 * README.md - this file
 
