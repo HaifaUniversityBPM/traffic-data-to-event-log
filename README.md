@@ -191,6 +191,65 @@ The classification result is a dictionary contains an activity and the probabili
     'ContractProposal': 8.29100569383624e-35}
 
     From the above example we can see the highest probability is for the ResumeReviewActivity.
+
+### Distribution of datasets in the uncertainty-extended XES data standard
+
+In addition to distributing the CSV files for the recognition_result logs, we additionally share two files containing the same datasets converted to an XES extension explicitly representing uncertainty in event attributes. Specifically, in such files there are three uncertain event attributes, which correspond to the result of the label inference described above:
+
+- classification_prob_windows_start-41_end-7_action_1
+- classification_prob_windows_start-15_end-15_action_1
+- classification_prob_windows_start-7_end-41_action_1
+
+The XES uncertain log retains all three, but maps classification_prob_windows_start-41_end-7_action_1 with the activity label notion (easily changed by remapping the attribute names).
+Uncertain attributes fully express a probabilistic description of attribute values. In the case of the aforementioned three attributes, they are discrete and expressed through a discrete probability distribution.
+
+The example of classification shown in the previous section would be converted as such in the XES file:
+
+	<string key="uncertainty:classification_prob_windows_start-15_end-15_action_1" value="discrete_weak">
+		<float key="ResumeReviewActivity" value="0.384322532584433" />
+		<float key="GenerateJobApplicationActivity" value="0.1843477633451853" />
+		<float key="PerformAnInterviewMeeting" value="4.7399447586012736e-14" />
+		<float key="PerformAnInterviewCall" value="2.407567933598791e-34" />
+		<float key="ScheduleAnInterviewActivityCall" value="1.280111885616518e-21" />
+		<float key="ScheduleAnInterviewMeeting" value="1.6039484157515345e-17" />
+		<float key="ContractProposal" value="8.29100569383624e-35" />
+	</string>
+
+The structure shown here for the representation of uncertainty leverages the meta-attribute model present in the XES standard. As such, all XES-certified process analysis tools are able to read and write the probability values for the possible labels. Uncertainty-focused process mining tools are able to exploit this probabilistic information to provide additional insights about the process on the basis of ad-hoc techniques.
+
+In order to allow traditional process mining tools to have maximum compatibility with this class of logs, we introduced default values for such attributes. The default values corresponds to the label with highest probability, i.e., `ResumeReviewActivity` in the example above.
+
+Withing an existing taxonomic classification for event logs, this log is of class [A]<sub>W</sub> (meaning there is a discrete and "weak" uncertainty, i.e. the probability values are known, on the activity label attribute).
+
+The following table shows some statistics of the event logs.
+
+
+| **Statistic**                               | **Log**            | **Log**            |
+|---------------------------------------------|--------------------|--------------------|
+|                                             | HR                 | PTP                |
+|---------------------------------------------|--------------------|--------------------|
+| Number of traces                            | 10                 | 10                 |
+| Number of events                            | 74                 | 126                |
+| Number of unique activity labels            | 7                  | 7                  |
+| Average number of events per trace          | 7.4                | 12.6               |
+| Median number of events per trace           | 6.0                | 14.0               |
+| Minimum number of events per trace          | 4                  | 8                  |
+| Maximum number of events per trace          | 14                 | 14                 |
+|---------------------------------------------|--------------------|--------------------|
+| Taxonomic classification                    | [A]<sub>W</sub>    | [A]<sub>W</sub>    |
+| Average number of realizations per trace    | 10,084,532,298.4   | 7,344,521,182.6    |
+| Median number of realizations per trace     | 412,972.0          | 7,909,306,972.0    |
+| Minimum number of realizations per trace    | 2,401              | 823,543            |
+| Maximum number of realizations per trace    | 96,889,010,407     | 13,841,287,201     |
+| Total number of trace realizations          | 100,845,322,984    | 73,445,211,826     |
+
+Here, by "realization" we mean the number of possible traditional traces obtained from all possible samplings of the uncertain activity label attributes. We can see that, even though this log contains data about 10 cases, it expresses a high amount of complexity.
+
+For further reading:
+
+- Pegoraro, Marco, Merih Seran Uysal, and Wil MP van der Aalst. "Conformance checking over uncertain event data." Information Systems 102 (2021): 101810.
+- Pegoraro, Marco, Merih Seran Uysal, and Wil MP van der Aalst. "An XES Extension for Uncertain Event Data." In International Conference on Business Process Management. 2021.
+- Pegoraro, Marco, Merih Seran Uysal, and Wil MP van der Aalst. "PROVED: A tool for graph representation and analysis of uncertain event data." In Application and Theory of Petri Nets and Concurrency: 42nd International Conference, PETRI NETS 2021, Virtual Event, June 23–25, 2021, Proceedings 42, pp. 476-486. Springer International Publishing, 2021.
     
 ##### Tagging ground truth for evaluation 
 Additionally, the data was manually inspected and tagged as ground truth for evaluation purposes. Not all packets could be traced for the original classification. However, we could trace the classification for the packets of the activity action.
