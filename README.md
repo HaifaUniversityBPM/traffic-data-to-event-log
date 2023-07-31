@@ -105,7 +105,7 @@ It contains the following folder structure and files:
 
 
 #### Schema:
-All files share the shame schema except the recognition_results (which will be describe later in this file)
+All files share the same schema except the recognition_results (which will be describe later in this file)
 The files contains the following schema:
 
 | Field name      | Field Description                                                                                                                                                                                                                                                                                                     |
