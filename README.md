@@ -2,6 +2,7 @@
 
 ## Online Repository URL
 * [DataRepository](https://campushaifaac-my.sharepoint.com/:f:/g/personal/gengel01_campus_haifa_ac_il/ElOfw--h8W5Hl3nfQtiQJSgBOgl1OQt5ugXg4VtY-gDyog?e=30yMdB) - Link to the data repository.
+* [Publication](https://www.researchgate.net/publication/373258230_An_uncertainty-aware_event_log_of_network_traffic) - Link to the publication.
 
 ## About Data Sets
 These data sets contain a recordings of network traffic data.
