@@ -1,7 +1,7 @@
 # An uncertainty-aware event log of network traffic
 
 ## Online Repository URL
-* [DataRepository](https://campushaifaac-my.sharepoint.com/:f:/g/personal/gengel01_campus_haifa_ac_il/ElOfw--h8W5Hl3nfQtiQJSgBOgl1OQt5ugXg4VtY-gDyog?e=30yMdB) - Link to the data repository.
+* [DataRepository](https://zenodo.org/records/18074899) - Link to the data repository.
 * [Publication](https://www.researchgate.net/publication/373258230_An_uncertainty-aware_event_log_of_network_traffic) - Link to the publication.
 
 ## About Data Sets
@@ -310,3 +310,4 @@ This work is licensed under a
 
 ## Acknowledgments
 This work was done in collaboration with Accenture Labs, Israel
+
